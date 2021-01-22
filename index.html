@@ -1,0 +1,123 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>PACER JSON Formatter</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+</head>
+
+<body>
+	<form>
+		<label for="json">Input JSON Content Here:</label>
+		<textarea type="text" id="json" name="json"></textarea><br><br>
+		<button type="button" onclick="data.push(JSON.parse(document.getElementById('json').value));">Submit</button>
+		<button type="button" onclick="document.write( json2html.transform(data,template) );">Transform</button>
+	  </form> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/json2html/1.4.0/json2html.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        let data = [];
+        
+        let template = {'<>':'div','html':'<br> <br> Court: ${courtId} <br> Case Number: ${caseNumberFull} <br> Principal\'s Name: ${firstName} ${middleName} ${lastName} <br> Principal\'s Role: ${partyRole} <br> Case Title: ${caseTitle} <br> Date Filed: ${dateFiled} <br> Date Termed: ${dateTermed} <br> Nature of Suit: ${natureOfSuit}'};
+        
+		data.forEach(changeCourts);
+		data.forEach(changePartyRole);
+		data.forEach(changeNosCode);
+
+		function changeCourts(value, x, data) {
+			switch (data[x].courtId) {
+				case "gasbk":
+					data[x].courtId = "Georgia Southern Bankruptcy Court";
+					break;
+				case "mssbk":
+					data[x].courtId = "Mississippi Southern Bankruptcy Court";
+					break;
+				case "ordc":
+					data[x].courtId = "Oregon District Court";
+					break;
+				case "wawdc":
+					data[x].courtId = "Washington Western District Court";
+					break;
+				case "flmbk":
+					data[x].courtId = "Florida Middle Bankruptcy Court";
+					break;
+				case "ganbk":
+					data[x].courtId = "Georgia Northern Bankruptcy Court";
+					break;
+				case "06ca":
+					data[x].courtId = "Sixth Circuit Court of Appeals";
+					break;
+				case "10ca":
+					data[x].courtId = "Tenth Circuit Court of Appeals";
+					break;
+				case "alsbk":
+					data[x].courtId = "Alabama Southern Bankruptcy Court";
+					break;
+				case "arebk":
+					data[x].courtId = "Arizona Eastern Bankruptcy Court";
+					break;
+				case "arwbk":
+					data[x].courtId = "Arizona Western Bankruptcy Court";
+					break;
+				case "candc":
+					data[x].courtId = "California Northern District Court";
+					break;
+			}
+		}
+
+		function changePartyRole (value, x, data) {
+			switch (data[x].partyRole) {
+				case "intp":
+					data[x].partyRole = "Interested Party";
+					break;
+				case "db":
+					data[x].partyRole = "Debtor";
+					break;
+				case "pla":
+					data[x].partyRole = "Plaintiff";
+					break;	
+				case "dft":
+					data[x].partyRole = "Defendant";
+					break;
+				case "codb":
+					data[x].partyRole = "Co-Debtor";
+					break;
+				default:
+					data[x].partyRole = "Not Provided";
+					break;
+			}
+		}
+
+		function changeNosCode (value, x, data) {
+			switch (data[x].natureOfSuit) {
+				case "440":
+					data[x].natureOfSuit = "Other Civil Rights(Excludes claims against corrections officials)";
+					break;
+				case "890":
+					data[x].natureOfSuit = "Other Statutory Actions";
+					break;
+				case "3440":
+					data[x].natureOfSuit = "Appeal of Other Civil Rights(Excludes claims against corrections officials)";
+					break;
+				case "2510":
+					data[x].natureOfSuit = "Appeal of Motions to Vacate Sentence";
+					break;
+				case "1":
+					data[x].natureOfSuit = "Lorem Ipsum";
+					break
+				default:
+					data[x].natureOfSuit = "Not Provided";
+					break;
+			}
+		}
+        //native javascript
+        document.write( json2html.transform(data,template) );   
+    </script>
+</body>
+</html>
