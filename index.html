@@ -16,7 +16,7 @@
 	<form>
 		<label for="json">Input JSON Content Here:</label>
 		<textarea type="text" id="json" name="json"></textarea><br><br>
-		<button type="button" onclick="data.push(JSON.parse(document.getElementById('json').value));">Submit</button>
+		<button type="button" onclick="textToJson();">Submit</button>
 		<button type="button" onclick="document.write( json2html.transform(data,template) );">Transform</button>
 	  </form> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/json2html/1.4.0/json2html.min.js"></script>
@@ -29,6 +29,17 @@
 		data.forEach(changeCourts);
 		data.forEach(changePartyRole);
 		data.forEach(changeNosCode);
+
+		const textToJson = () => {
+			let textInput = document.getElementById('json').value;
+			let beginSliceAt = 0;
+			for (let i = 0; i < textInput.length; i++) {
+				if (textInput[i] = "}") {
+					data.push(JSON.parse(textInput.slice(beginSliceAt, i+1)));
+					beginSliceAt = i+2;
+				}
+			}
+		}
 
 		function changeCourts(value, x, data) {
 			switch (data[x].courtId) {
