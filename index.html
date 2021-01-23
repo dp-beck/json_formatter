@@ -24,21 +24,22 @@
     <script>
         let data = [];
         
-        let template = {'<>':'div','html':'<br> <br> Court: ${courtId} <br> Case Number: ${caseNumberFull} <br> Principal\'s Name: ${firstName} ${middleName} ${lastName} <br> Principal\'s Role: ${partyRole} <br> Case Title: ${caseTitle} <br> Date Filed: ${dateFiled} <br> Date Termed: ${dateTermed} <br> Nature of Suit: ${natureOfSuit}'};
+        let template = {'<>':'div','html':'<br> <br> Court: ${courtId} <br> Case Number: ${caseNumberFull} <br> Party Name: ${firstName} ${middleName} ${lastName} <br> Party Role: ${partyRole} <br> Case Title: ${caseTitle} <br> Date Filed: ${dateFiled} <br> Date Termed: ${dateTermed} <br> Nature of Suit: ${natureOfSuit}'};
         
-		data.forEach(changeCourts);
-		data.forEach(changePartyRole);
-		data.forEach(changeNosCode);
+		
 
 		const textToJson = () => {
 			let textInput = document.getElementById('json').value;
 			let beginSliceAt = 0;
 			for (let i = 0; i < textInput.length; i++) {
-				if (textInput[i] = "}") {
+				if (textInput[i] == "}") {
 					data.push(JSON.parse(textInput.slice(beginSliceAt, i+1)));
 					beginSliceAt = i+2;
 				}
 			}
+			data.forEach(changeCourts);
+			data.forEach(changePartyRole);
+			data.forEach(changeNosCode);
 		}
 
 		function changeCourts(value, x, data) {
@@ -107,6 +108,63 @@
 
 		function changeNosCode (value, x, data) {
 			switch (data[x].natureOfSuit) {
+				case "1":
+					data[x].natureOfSuit = "1 - USA is a Plaintiff";
+					break;
+				case "2":
+					data[x].natureOfSuit = "2 - USA is a Defendant";
+					break;
+				case "3":
+					data[x].natureOfSuit = "3 - Private lawsuit";
+					break;
+				case "4":
+					data[x].natureOfSuit = "4 - Diversity";
+					break;
+				case "5":
+					data[x].natureOfSuit = "5 - Local or state issue";
+					break;
+				case "110":
+					data[x].natureOfSuit = "110 - Insurance";
+					break;
+				case "120":
+					data[x].natureOfSuit = "120 - Marine";
+					break;
+				case "130":
+					data[x].natureOfSuit = "130 - Miller Act";
+					break;
+				case "140":
+					data[x].natureOfSuit = "140 - Negotiable Instrument";
+					break;
+				case "150":
+					data[x].natureOfSuit = "150 - Recovery of Overpayment & Enforcement of Judgment";
+					break;
+				case "151":
+					data[x].natureOfSuit = "151 - Medicare Act";
+					break;
+				case "152":
+					data[x].natureOfSuit = "152 -  Recovery of Defaulted Student Loans (Excl. Veterans";
+					break;
+				case "153":
+					data[x].natureOfSuit = "153 - Recovery of Overpayment of Veteran’s Benefits";
+					break;
+				case "160":
+					data[x].natureOfSuit = "160 - Stockholders’ Suits";
+					break;			
+				case "190":
+					data[x].natureOfSuit = "190 - Other Contract";
+					break;
+				case "195":
+					data[x].natureOfSuit = "195 - Contract Product Liability";
+					break;
+				case "196":
+					data[x].natureOfSuit = "196 - Franchise";
+					break;
+				case "210":
+					data[x].natureOfSuit = "210 - Land Condemnation";
+					break;
+				case "220":
+					data[x].natureOfSuit = "220 - Foreclosure";
+					break
 				case "440":
 					data[x].natureOfSuit = "Other Civil Rights(Excludes claims against corrections officials)";
 					break;
@@ -119,9 +177,7 @@
 				case "2510":
 					data[x].natureOfSuit = "Appeal of Motions to Vacate Sentence";
 					break;
-				case "1":
-					data[x].natureOfSuit = "Lorem Ipsum";
-					break
+
 				default:
 					data[x].natureOfSuit = "Not Provided";
 					break;
