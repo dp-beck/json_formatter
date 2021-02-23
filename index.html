@@ -13,12 +13,19 @@
 </head>
 
 <body>
+	<h1>JSON Formatter for PACER Records</h1>
 	<form>
 		<label for="json">Input JSON Content Here:</label>
 		<textarea type="text" id="json" name="json"></textarea><br><br>
-		<button type="button" onclick="textToJson();">Submit</button>
-		<button type="button" onclick="document.write( json2html.transform(data,template) );">Transform</button>
-	  </form> 
+		<button type="button" onclick="textToJson(); document.write( json2html.transform(data,template) );">Submit</button>
+	  </form>
+	<h2>Instructions</h2>
+	<ol>
+		<li>Download JSON file of PACER results.</li>
+		<li>Copy entries from JSON file, starting with curlycue bracket and ending with curlycue bracket. {...}</li>
+		<li>Paste in Text Area Above.</li>
+		<li>Hit Submit.</li>
+	</ol> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/json2html/1.4.0/json2html.min.js"></script>
     <script src="script.js"></script>
     <script>
@@ -26,8 +33,6 @@
         
         let template = {'<>':'div','html':'<br> <br> Court: ${courtId} <br> Case Number: ${caseNumberFull} <br> Party Name: ${firstName} ${middleName} ${lastName} <br> Party Role: ${partyRole} <br> Case Title: ${caseTitle} <br> Date Filed: ${dateFiled} <br> Date Termed: ${dateTermed} <br> Nature of Suit: ${natureOfSuit}'};
         
-		
-
 		const textToJson = () => {
 			let textInput = document.getElementById('json').value;
 			let beginSliceAt = 0;
@@ -77,9 +82,325 @@
 				case "arwbk":
 					data[x].courtId = "Arizona Western Bankruptcy Court";
 					break;
+				case "alndc":
+					data[x].courtId = "Alabama Northern District Court";
+					break;
+				case "almdc":
+					data[x].courtId = "Alabama Middle District Court";
+					break;
+				case "alsdc":
+					data[x].courtId = "Alabama Southern District Court";
+					break;
+				case "akdc":
+					data[x].courtId = "Alaska District Court";
+					break;
+				case "azdc":
+					data[x].courtId = "Arizona District Court";
+					break;
+				case "aredc":
+					data[x].courtId = "Arkansas Eastern District Court";
+					break;
+				case "arwdc":
+					data[x].courtId = "Arkansas Western District Court";
+					break;
+				case "arcdc":
+					data[x].courtId = "Arkansas Central District Court";
+					break;
 				case "candc":
 					data[x].courtId = "California Northern District Court";
 					break;
+				case "caedc":
+					data[x].courtId = "California Eastern District Court";
+					break;
+				case "casdc":
+					data[x].courtId = "California Southern District Court";
+					break;
+				case "cacdc":
+					data[x].courtId = "California Central District Court";
+					break;
+				case "codc":
+					data[x].courtId = "Colorado District Court";
+					break;
+				case "ctdc":
+					data[x].courtId = "Connecticut District Court";
+					break;
+				case "dedc":
+					data[x].courtId = "Delaware District Court";
+					break;
+				case "dcdc":
+					data[x].courtId = "District of Columbia District Court";
+					break;
+				case "flndc":
+					data[x].courtId = "Florida Northern District Court";
+					break;
+				case "flmdc":
+					data[x].courtId = "Florida Middle District Court";
+					break;
+				case "flsdc":
+					data[x].courtId = "Florida Southern District Court";
+					break;
+				case "gandc":
+					data[x].courtId = "Georgia Northern District Court";
+					break;
+				case "gamdc":
+					data[x].courtId = "Georgia Middle District Court";
+					break;
+				case "gasdc":
+					data[x].courtId = "Georgia Southern District Court";
+					break;
+				case "gudc":
+					data[x].courtId = "Guam District Court";
+					break;
+				case "hidc":
+					data[x].courtId = "Hawaii District Court";
+					break;
+				case "iddc":
+					data[x].courtId = "Idaho District Court";
+					break;
+				case "ilndc":
+					data[x].courtId = "Illinois Northern District Court";
+					break;
+				case "ilcdc":
+					data[x].courtId = "Illinois Central District Court";
+					break;
+				case "ilsdc":
+					data[x].courtId = "Illinois Southern District Court";
+					break;
+				case "inndc":
+					data[x].courtId = "Indiana Northern District Court";
+					break;
+				case "insdc":
+					data[x].courtId = "Indiana Southern District Court";
+					break;
+				case "iandc":
+					data[x].courtId = "Iowa Northern District Court";
+					break;
+				case "iasdc":
+					data[x].courtId = "Iowa Southern District Court";
+					break;
+				case "ksdc":
+					data[x].courtId = "Kansas District Court";
+					break;
+				case "kyedc":
+					data[x].courtId = "Kentucky Eastern District Court";
+					break;
+				case "kywdc":
+					data[x].courtId = "Kentucky Western District Court";
+					break;
+				case "laedc":
+					data[x].courtId = "Louisiana Eastern District Court";
+					break;
+				case "lawdc":
+					data[x].courtId = "Louisiana Western District Court";
+					break;
+				case "lamdc":
+					data[x].courtId = "Louisiana Midlle District Court";
+					break;
+				case "madc":
+					data[x].courtId = "Massachusetts District Court";
+					break;
+				case "medc":
+					data[x].courtId = "Maine District Court";
+					break;
+				case "mddc":
+					data[x].courtId = "Maryland District Court";
+					break;
+				case "miedc":
+					data[x].courtId = "Michigan Eastern District Court";
+					break;
+				case "miwdc":
+					data[x].courtId = "Michigan Western District Court";
+					break;
+				case "mndc":
+					data[x].courtId = "Minnesota District Court";
+					break
+				case "msndc":
+					data[x].courtId = "Mississippi Northern District Court";
+					break;
+				case "mssdc":
+					data[x].courtId = "Mississippi Northern District Court";
+					break;
+				case "modc":
+					data[x].courtId = "Montana District Court";
+					break;
+				case "nedc":
+					data[x].courtId = "Nebraska District Court";
+					break;
+				case "nvdc":
+					data[x].courtId = "Nevada District Court";
+					break;
+				case "nedc":
+					data[x].courtId = "New Hampshire District Court";
+					break;
+				case "njdc":
+					data[x].courtId = "New Jersey District Court";
+					break;
+				case "nmdc":
+					data[x].courtId = "New Mexico District Court";
+					break;
+				case "nyedc":
+					data[x].courtId = "New York Eastern District Court";
+					break;
+				case "nywdc":
+					data[x].courtId = "New York Western District Court";
+					break;
+				case "nysdc":
+					data[x].courtId = "New York Southern District Court";
+					break;
+				case "nyndc":
+					data[x].courtId = "New York Northern District Court";
+					break;
+				case "ncedc":
+					data[x].courtId = "North Carolina Eastern District Court";
+					break;
+				case "ncmdc":
+					data[x].courtId = "North Carolina Middle District Court";
+					break;
+				case "ncwdc":
+					data[x].courtId = "North Carolina Western District Court";
+					break;
+				case "nddc":
+					data[x].courtId = "North Dakota District Court";
+					break;
+				case "ohndc":
+					data[x].courtId = "Ohio Northern District Court";
+					break;
+				case "ohsdc":
+					data[x].courtId = "Ohio Southern District Court";
+					break;
+				case "oked":
+					data[x].courtId = "Oklahoma Eastern District Court";
+					break;
+				case "okwd":
+					data[x].courtId = "Oklahoma Western District Court";
+					break;
+				case "oknd":
+					data[x].courtId = "Oklahoma Northern District Court";
+					break;
+				case "ordc":
+					data[x].courtId = "Oregon District Court";
+					break;
+				case "paedc":
+					data[x].courtId = "Pennsylvania Eastern District Court";
+					break;
+				case "pawdc":
+					data[x].courtId = "Pennsylvania Western District Court";
+					break;
+				case "pamdc":
+					data[x].courtId = "Pennsylvania Middle District Court";
+					break;
+				case "prdc":
+					data[x].courtId = "Puerto Rico District Court";
+					break;
+				case "ridc":
+					data[x].courtId = "Rhode Island District Court";
+					break;
+				case "scdc":
+					data[x].courtId = "South Carolina District Court";
+					break;
+				case "sddc":
+					data[x].courtId = "South Dakota District Court";
+					break;
+				case "ohsdc":
+					data[x].courtId = "Ohio Southern District Court";
+					break;
+				case "tnedc":
+					data[x].courtId = "Tennessee Eastern District Court";
+					break;
+				case "tnwdc":
+					data[x].courtId = "Tennessee Western District Court";
+					break;
+				case "tnmdc":
+					data[x].courtId = "Tennessee Middle District Court";
+					break;
+				case "txndc":
+					data[x].courtId = "Texas Northern District Court";
+					break;
+				case "txsdc":
+					data[x].courtId = "Texas Southern District Court";
+					break;
+				case "txwdc":
+					data[x].courtId = "Texas Western District Court";
+					break;
+				case "nmidc":
+					data[x].courtId = "Northern Mariana Islands District Court";
+					break;
+				case "utdc":
+					data[x].courtId = "Utah District Court";
+					break;
+				case "vtdc":
+					data[x].courtId = "Vermont District Court";
+					break;
+				case "vidc":
+					data[x].courtId = "U.S. Virgin Islands District Court";
+					break;
+				case "vaedc":
+					data[x].courtId = "Virgina Eastern District Court";
+					break;
+				case "vawdc":
+					data[x].courtId = "Virginia Western District Court";
+					break;
+				case "waedc":
+					data[x].courtId = "Washington Eastern District Court";
+					break;
+				case "wawdc":
+					data[x].courtId = "Washington Western District Court";
+					break;
+				case "wvndc":
+					data[x].courtId = "West Virginia Northern District Court";
+					break;
+				case "wvsdc":
+					data[x].courtId = "West Virginia Southern District Court";
+					break;
+				case "wiedc":
+					data[x].courtId = "Wisconsin Eastern District Court";
+					break;
+				case "wiwdc":
+					data[x].courtId = "Wisconsin Western District Court";
+					break;
+				case "wydc":
+					data[x].courtId = "Wyoming District Court";
+					break;
+				case "01ca":
+					data[x].courtId = "1st Circuit Court of Appeals";
+					break;
+				case "02ca":
+					data[x].courtId = "2nd Circuit Court of Appeals";
+					break;
+				case "03ca":
+					data[x].courtId = "3rd Circuit Court of Appeals";
+					break;
+				case "04ca":
+					data[x].courtId = "4th Circuit Court of Appeals";
+					break;
+				case "05ca":
+					data[x].courtId = "5th Circuit Court of Appeals";
+					break;
+				case "07ca":
+					data[x].courtId = "7th Circuit Court of Appeals";
+					break;
+				case "08ca":
+					data[x].courtId = "8th Circuit Court of Appeals";
+					break;		
+				case "09ca":
+					data[x].courtId = "9th Circuit Court of Appeals";
+					break;
+				case "11ca":
+					data[x].courtId = "11th Circuit Court of Appeals";
+					break;
+				case "1dcca":
+					data[x].courtId = "D.C. Circuit Court of Appeals";
+					break;
+				case "usfcc":
+					data[x].courtId = "U.S. Federal Court of Claims";
+					break;
+				case "usfcc":
+					data[x].courtId = "U.S. Federal Court of Claims";
+					break;
+				case "citdc":
+					data[x].courtId = "U.S. Court of International Trade";
+					break;
+/*Need Bankruptcy Courts Still*/
 			}
 		}
 
@@ -97,16 +418,32 @@
 				case "dft":
 					data[x].partyRole = "Defendant";
 					break;
-				case "codb":
-					data[x].partyRole = "Co-Debtor";
+				case "3pd":
+					data[x].partyRole = "Third Party Defendant";
 					break;
-				default:
-					data[x].partyRole = "Not Provided";
+				case "3pp":
+					data[x].partyRole = "Third Party Plaintff";
+					break;
+				case "cr":
+					data[x].partyRole = "Creditor";
+					break;
+				case "cd":
+					data[x].partyRole = "Counter Defendant";
+					break;
+				case "cc":
+					data[x].partyRole = "Counter Claimant";
+					break;
+				case "crc":
+					data[x].partyRole = "Cross Claimant";
+					break;
+				case "crd":
+					data[x].partyRole = "Cross Defendant";
 					break;
 			}
 		}
 
 		function changeNosCode (value, x, data) {
+			/* IF data[x].natureOfSuit IS 4 digits, then lop off 1st digit and  */
 			switch (data[x].natureOfSuit) {
 				case "1":
 					data[x].natureOfSuit = "1 - USA is a Plaintiff";
@@ -142,7 +479,7 @@
 					data[x].natureOfSuit = "151 - Medicare Act";
 					break;
 				case "152":
-					data[x].natureOfSuit = "152 -  Recovery of Defaulted Student Loans (Excl. Veterans";
+					data[x].natureOfSuit = "152 - Recovery of Defaulted Student Loans (Excl. Veterans";
 					break;
 				case "153":
 					data[x].natureOfSuit = "153 - Recovery of Overpayment of Veteran’s Benefits";
@@ -164,10 +501,253 @@
 					break;
 				case "220":
 					data[x].natureOfSuit = "220 - Foreclosure";
-					break
-				case "440":
-					data[x].natureOfSuit = "Other Civil Rights(Excludes claims against corrections officials)";
 					break;
+				case "230":
+					data[x].natureOfSuit = "230 - Rent Lease & Ejectment";
+					break;
+				case "240":
+					data[x].natureOfSuit = "240 - Torts to Land";
+					break;
+				case "245":
+					data[x].natureOfSuit = "245 -Tort Product Liability";
+					break;
+				case "290":
+					data[x].natureOfSuit = "290 - All Other Real Property";
+					break;
+				case "310":
+					data[x].natureOfSuit = "310 - Personal Injury";
+					break;
+				case "315":
+					data[x].natureOfSuit = "315 - Airplane Product Liability";
+					break;
+				case "320":
+					data[x].natureOfSuit = "320 - Assault, Libel, and Slander";
+					break;
+				case "330":
+					data[x].natureOfSuit = "330 - Federal Employers' Liability";
+					break;
+				case "340":
+					data[x].natureOfSuit = "340 - Marine";
+					break;
+				case "345":
+					data[x].natureOfSuit = "345 - Marine Product Liability";
+					break;
+				case "350":
+					data[x].natureOfSuit = "350 - Motor Vehicle";
+					break;
+				case "355":
+					data[x].natureOfSuit = "355 - Motor Vehicle Product Liability";
+					break;				
+				case "360":
+					data[x].natureOfSuit = "360 - Other Personal Injury";
+					break;				
+				case "362":
+					data[x].natureOfSuit = "362 - Personal Injury Medical Malpractice";
+					break;
+				case "365":
+					data[x].natureOfSuit = "365 - Personal Injury Product Liability";
+					break;
+				case "368":
+					data[x].natureOfSuit = "368 - Asbestos Personal Injury Product Liability";
+					break;
+				case "370":
+					data[x].natureOfSuit = "370 - Other Fraud";
+					break;
+				case "371":
+					data[x].natureOfSuit = "371 - Truth in Lending";
+					break;
+				case "380":
+					data[x].natureOfSuit = "380 - Other Personal Property Damage";
+					break;
+				case "385":
+					data[x].natureOfSuit = "385 - Property Damage Product Liability";
+					break;
+				case "422":
+					data[x].natureOfSuit = "422 - Appeal 28 USC 158";
+					break;
+				case "423":
+					data[x].natureOfSuit = "423 - Withdrawal 28 USC 157";
+					break;
+				case "440":
+					data[x].natureOfSuit = "440 - Other Civil Rights";
+					break;
+				case "441":
+					data[x].natureOfSuit = "441 - Voting";
+					break;
+				case "442":
+					data[x].natureOfSuit = "442 - Employment";
+					break;
+				case "443":
+					data[x].natureOfSuit = "443 - Housing/Accommodations";
+					break;
+				case "444":
+					data[x].natureOfSuit = "444  -Welfare";
+					break;
+				case "445":
+					data[x].natureOfSuit = "445 - Amer w/Disabilities-Employment";
+					break;
+				case "446":
+					data[x].natureOfSuit = "446 - Amer w/Disabilities - Other";
+					break;
+				case "462":
+					data[x].natureOfSuit = "462 - Naturalization Application";
+					break;
+				case "463":
+					data[x].natureOfSuit = "463 - Habeas Corpus - Alien Detainee";
+					break;
+				case "465":
+					data[x].natureOfSuit = "465 - Other Immigration Actions";
+					break;
+				case "510":
+					data[x].natureOfSuit = "510 - Motions to Vacate Sentence";
+					break;
+				case "530":
+					data[x].natureOfSuit = "530 - Habeas Corpus - General";
+					break;
+				case "535":
+					data[x].natureOfSuit = "535 - Habeas Corpus - Death Penalty";
+					break;	
+				case "540":
+					data[x].natureOfSuit = "540 - Habeas Corpus - Mandamus & Other";
+					break;
+				case "550":
+					data[x].natureOfSuit = "550 - Habeas Corpus - Civil Rights";
+					break;
+				case "555":
+					data[x].natureOfSuit = "555 - Habeas Corpus - Prison Condition";
+					break;
+				case "560":
+					data[x].natureOfSuit = "560 - Civil Detainee - Conditions of Confinement";
+					break;
+				case "610":
+					data[x].natureOfSuit = "610 - Forfeiture/Penalty - Agriculture";
+					break;
+					case "620":
+					data[x].natureOfSuit = "620 - Forfeiture/Penalty - Other Food & Drug";
+					break;
+				case "625":
+					data[x].natureOfSuit = "625 - Forfeiture/Penalty - Drug Related Seizure of Property";
+					break;
+				case "630":
+					data[x].natureOfSuit = "630 - Forfeiture/Penalty - Liquor Laws";
+					break;
+				case "640":
+					data[x].natureOfSuit = "640 - Forefeiture/Penalty - RR & Trucks";
+					break;
+				case "650":
+					data[x].natureOfSuit = "650 - Forfeiture/Penalty - Airline Regulations";
+					break;
+				case "660":
+					data[x].natureOfSuit = "660 - Forfeiture/Penalty - Occupational Safety/Health";
+					break;
+				case "690":
+					data[x].natureOfSuit = "690 - Forfeiture/Penalty - Other";
+					break;
+				case "710":
+					data[x].natureOfSuit = "710 - Fair Labor Standards Act";
+					break;
+				case "720":
+					data[x].natureOfSuit = "720 - Labor Management Relations";
+					break;
+				case "730":
+					data[x].natureOfSuit = "730 - Labor/Management Reporting & Disclosure Act";
+					break;
+				case "740":
+					data[x].natureOfSuit = "740 - Railway Labor Act";
+					break;
+				case "790":
+					data[x].natureOfSuit = "790 - Other Labor Litigation";
+					break;
+				case "791":
+					data[x].natureOfSuit = "791 - Employee Retirement Income Security Act";
+					break;
+				case "820":
+					data[x].natureOfSuit = "820 - Copyrights";
+					break;
+				case "830":
+					data[x].natureOfSuit = "830 - Patent";
+					break;
+				case "840":
+					data[x].natureOfSuit = "840 - Trademark";
+					break;
+				case "861":
+					data[x].natureOfSuit = "861 - Social Security = HIA (1395ff)";
+					break;
+				case "862":
+					data[x].natureOfSuit = "862 - Social Security - Black Lung";
+					break;
+				case "863":
+					data[x].natureOfSuit = "863 - Social Security - DIWC/DIWW (450(g))";
+					break;
+				case "864":
+					data[x].natureOfSuit = "864 - Social Security - SSID Title XVI";
+					break;
+				case "865":
+					data[x].natureOfSuit = "865 - Social Security - RSI (405(g))";
+					break;
+				case "870":
+					data[x].natureOfSuit = "870 - Taxes (U.S. Plaintiff or Defendant)";
+					break;
+				case "871":
+					data[x].natureOfSuit = "871 - Federal Tax Suit - IRS Third Party 26 USC 7609";
+					break;
+				case "400":
+					data[x].natureOfSuit = "400 - State Reapportionment";
+					break;
+				case "430":
+					data[x].natureOfSuit = "430 - Banks and Banking";
+					break;
+				case "410":
+					data[x].natureOfSuit = "410 - Antitrust";
+					break;
+				case "450":
+					data[x].natureOfSuit = "450 - Commerce";
+					break;
+				case "460":
+					data[x].natureOfSuit = "460 - Deportation";
+					break;
+				case "470":
+					data[x].natureOfSuit = "470 - Racketeer Influenced and Corrupt Organizations";
+					break;
+				case "480":
+					data[x].natureOfSuit = "480 - Consumer Credit";
+					break;
+				case "490":
+					data[x].natureOfSuit = "490 -  Cable/Sat TV";
+					break;
+				case "810":
+					data[x].natureOfSuit = "810 - Selective Service";
+					break;
+				case "850":
+					data[x].natureOfSuit = "850 - Securities/Commodites/Exchange";
+					break;
+				case "875":
+					data[x].natureOfSuit = "875 - Customer Challenge 12 USC 3410";
+					break;
+				case "891":
+					data[x].natureOfSuit = "891 - Agricultural Acts";
+					break;
+				case "892":
+					data[x].natureOfSuit = "892 - Economic Stabilization Act";
+					break;
+				case "893":
+					data[x].natureOfSuit = "893 - Environmental Matters";
+					break;
+				case "894":
+					data[x].natureOfSuit = "894 - Energy Allocation Acts";
+					break;
+				case "895":
+					data[x].natureOfSuit = "895 - Freedom of Information Act";
+					break;
+				case "900":
+					data[x].natureOfSuit = "895 - Appeal of Fee Determination Under Equal Access to Justice";
+					break;
+				case "950":
+					data[x].natureOfSuit = "950 - Constitutionality of State Statutes";
+					break;
+/*  Add Appeal Cases
+*/
+
 				case "890":
 					data[x].natureOfSuit = "Other Statutory Actions";
 					break;
@@ -177,13 +757,10 @@
 				case "2510":
 					data[x].natureOfSuit = "Appeal of Motions to Vacate Sentence";
 					break;
-
-				default:
-					data[x].natureOfSuit = "Not Provided";
-					break;
 			}
 		}
-        //native javascript
+		
+		//native javascript
         document.write( json2html.transform(data,template) );   
     </script>
 </body>
