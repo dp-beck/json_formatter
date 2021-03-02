@@ -22,7 +22,7 @@
 	<h2>Instructions</h2>
 	<ol>
 		<li>Download JSON file of PACER results.</li>
-		<li>Copy entries from JSON file, starting with curlycue bracket and ending with curlycue bracket. {...}</li>
+		<li>Copy entries from JSON file, starting with the open curlycue bracket after content: [ and ending with closing curlycue bracket before ]. {...}</li>
 		<li>Paste in Text Area Above.</li>
 		<li>Hit Submit.</li>
 	</ol> 
@@ -49,6 +49,9 @@
 
 		function changeCourts(value, x, data) {
 			switch (data[x].courtId) {
+				case "cafc":
+					data[x].courtId = "Federal Circuit Court of Appeals";
+					break;
 				case "gasbk":
 					data[x].courtId = "Georgia Southern Bankruptcy Court";
 					break;
@@ -1039,13 +1042,16 @@
 					data[x].natureOfSuit = "890 - Other Statutory Actions";
 					break;
 				case "3440":
-					data[x].natureOfSuit = "3440 - Appeal of Other Civil Rights(Excludes claims against corrections officials)";
+					data[x].natureOfSuit = "3440 - Appeal of Other Civil Rights";
 					break;
 				case "2510":
 					data[x].natureOfSuit = "2510 - Appeal of Motions to Vacate Sentence";
 					break;
 				case "3950":
 					data[x].natureOfSuit = "3950 - Appeal of Constitutionality of State Statutes";
+					break;
+				case "3190":
+					data[x].natureOfSuit = "3190 - Appeal of Other Contract";
 					break;
 			}
 		}
