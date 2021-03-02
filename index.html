@@ -322,6 +322,9 @@
 				case "txwdc":
 					data[x].courtId = "Texas Western District Court";
 					break;
+				case "txedc":
+					data[x].courtId = "Texas Eastern District Court";
+					break;
 				case "nmidc":
 					data[x].courtId = "Northern Mariana Islands District Court";
 					break;
@@ -639,6 +642,9 @@
 					break;
 				case "txwbk":
 					data[x].courtId = "Texas Western Bankruptcy Court";
+					break;
+				case "txebk":
+					data[x].courtId = "Texas Eastern Bankruptcy Court";
 					break;
 				case "nmibk":
 					data[x].courtId = "Northern Mariana Islands Bankruptcy Court";
@@ -1030,13 +1036,16 @@
 */
 
 				case "890":
-					data[x].natureOfSuit = "Other Statutory Actions";
+					data[x].natureOfSuit = "890 - Other Statutory Actions";
 					break;
 				case "3440":
-					data[x].natureOfSuit = "Appeal of Other Civil Rights(Excludes claims against corrections officials)";
+					data[x].natureOfSuit = "3440 - Appeal of Other Civil Rights(Excludes claims against corrections officials)";
 					break;
 				case "2510":
-					data[x].natureOfSuit = "Appeal of Motions to Vacate Sentence";
+					data[x].natureOfSuit = "2510 - Appeal of Motions to Vacate Sentence";
+					break;
+				case "3950":
+					data[x].natureOfSuit = "3950 - Appeal of Constitutionality of State Statutes";
 					break;
 			}
 		}
