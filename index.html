@@ -50,6 +50,9 @@
 
 		function changeCourts(value, x, data) {
 			switch (data[x].courtId) {
+				case "cofc":
+					data[x].courtId = "Court of Federal Claims";
+					break;
 				case "cafc":
 					data[x].courtId = "Federal Circuit Court of Appeals";
 					break;
